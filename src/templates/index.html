@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+        href="{{url_for('static', filename='css/estilo.css')}}">
+    <title>Aplicación con MongoDB</title>
+</head>
+<body>
+    <h1>Trabajo Linea de Profundizacion</h1>
+    <h1>Personas</h1>
+    <ul>
+        {% for persona in personas %}
+            <li>{{ persona.nombre }} - {{ persona.apellido }} - {{ persona.telefono }} </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Agregar Persona</h2>
+    <form method="post" action="/guardar_personas">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="edad">Apellido:</label>
+        <input type="text" name="apellido" required><br>
+        <label for="edad">Telefono:</label>
+        <input type="text" name="telefono" required><br>
+        <label for="edad">Correo:</label>
+        <input type="text" name="correo" required><br>
+        <label for="edad">Fecha nacimiento:</label>
+        <input type="text" name="fecha_nacimiento" required><br>
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+</html>
